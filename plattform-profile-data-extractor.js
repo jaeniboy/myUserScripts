@@ -21,20 +21,20 @@
   var queries = {
 
     Facebook: {
-        title: 		function(){return(document.querySelector("h1 a").innerText)},
-        follower: 	function(){return(document.getElementsByClassName("x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz xt0b8zv xi81zsa x1s688f")[0].innerText)}
+        title:    function(){return(document.querySelector("h1 a").innerText)},
+        follower: function(){return(document.getElementsByClassName("x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz xt0b8zv xi81zsa x1s688f")[0].innerText)}
       },
     Twitter: {
-        title: 		function(){return("@" + pagelink.split(/[/?]/)[3])},
-        follower: 	function(){return(document.getElementsByClassName("css-4rbku5 css-18t94o4 css-901oao r-18jsvk2 r-1loqt21 r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0")[1].innerText)}
+        title:    function(){return("@" + pagelink.split(/[/?]/)[3])},
+        follower: function(){return(document.getElementsByClassName("css-4rbku5 css-18t94o4 css-901oao r-18jsvk2 r-1loqt21 r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0")[1].innerText)}
       },
     Instagram: {
-        title: 		function(){return("@" + pagelink.split(/[/?]/)[3])},
-        follower: 	function(){return(document.getElementsByClassName("_aacl _aacp _aacu _aacx _aad6 _aade")[1].innerText)}
+        title:    function(){return("@" + pagelink.split(/[/?]/)[3])},
+        follower: function(){return(document.getElementsByClassName("_aacl _aacp _aacu _aacx _aad6 _aade")[1].innerText)}
       },
     Youtube: {
-      	title: 		function(){return(document.getElementById("channel-name").innerText)},
-      	follower: 	function(){return(document.getElementById("subscriber-count").innerText)}
+      	title:    function(){return(document.getElementById("channel-name").innerText)},
+      	follower: function(){return(document.getElementById("subscriber-count").innerText)}
     }
   }
 

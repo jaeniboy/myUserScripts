@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name     plattform-profile-data-extractor
-// @description   excracts data (e.g. titles, followers, links) from plattform profiles on facebook, insta, twitter and youtube to c&p them directly to an excel-file 
+// @name     platform-profile-data-extractor
+// @description   excracts data (e.g. titles, followers, links) from platform profiles on facebook, insta, twitter and youtube to c&p them directly to an excel-file 
 // @version  1
 // @grant    none
 // @include  https://www.facebook.com/groups/*
@@ -38,7 +38,7 @@
     }
   }
 
-  // check, which plattform we're on
+  // check, which platform we're on
 
   if (/facebook.com/.test(pagelink))
   	{domain_name = "Facebook"}

@@ -13,55 +13,51 @@
 
 (function() {
   
+  // get full pagelink
+  var pagelink = window.location.href.toString();
+  var domain_name = "";
+  
   // define data-selectors here
   var queries = {
 
     Facebook: {
-        title: 				'document.querySelector("h1 a").innerText',
-        description: 	"",
-        follower: 		'document.getElementsByClassName("x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz xt0b8zv xi81zsa x1s688f")[0].innerText'
+        title: 		function(){return(document.querySelector("h1 a").innerText)},
+        follower: 	function(){return(document.getElementsByClassName("x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz xt0b8zv xi81zsa x1s688f")[0].innerText)}
       },
     Twitter: {
-        title: 				'"@" + window.location.href.toString().split("/")[3]',
-        description: 	"",
-        follower: 		'document.getElementsByClassName("css-4rbku5 css-18t94o4 css-901oao r-18jsvk2 r-1loqt21 r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0")[1].innerText'
-      }, 
+        title: 		function(){return("@" + pagelink.split(/[/?]/)[3])},
+        follower: 	function(){return(document.getElementsByClassName("css-4rbku5 css-18t94o4 css-901oao r-18jsvk2 r-1loqt21 r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0")[1].innerText)}
+      },
     Instagram: {
-        title: 				'"@" + window.location.href.toString().split("/")[3]',
-        description: 	"",
-        follower: 		'document.getElementsByClassName("_aacl _aacp _aacu _aacx _aad6 _aade")[1].innerText'
+        title: 		function(){return("@" + pagelink.split(/[/?]/)[3])},
+        follower: 	function(){return(document.getElementsByClassName("_aacl _aacp _aacu _aacx _aad6 _aade")[1].innerText)}
       },
     Youtube: {
-      	title: 				'document.getElementById("channel-name").innerText',
-      	description: 	'',
-      	follower: 		'document.getElementById("subscriber-count").innerText'
+      	title: 		function(){return(document.getElementById("channel-name").innerText)},
+      	follower: 	function(){return(document.getElementById("subscriber-count").innerText)}
     }
-  } 
+  }
 
-  
-  var pagelink = window.location.href.toString();
-  var domain_name = "";
-  
   // check, which plattform we're on
-  
-  if (/facebook.com/.test(pagelink)) 
+
+  if (/facebook.com/.test(pagelink))
   	{domain_name = "Facebook"}
-  else if (/twitter.com/.test(pagelink)) 
+  else if (/twitter.com/.test(pagelink))
   	{domain_name = "Twitter"}
   else if (/instagram.com/.test(pagelink))
     {domain_name = "Instagram"}
   else if (/youtube.com/.test(pagelink))
   	{domain_name = "Youtube"}
   else {domain_name = "undefined"}
-  
-  
+
+
   function getMetadata() { // get the data using the selectors
 
-    	var type = domain_name;
-    	var title = eval(queries[domain_name].title)
-    	var empty = "";
+      var type = domain_name;
+      var title = queries[domain_name].title()
+      var empty = "";
       var link = pagelink;
-      var follower = eval(queries[domain_name].follower);
+      var follower = queries[domain_name].follower();
 
       var metadata = [
         type,
@@ -119,13 +115,13 @@
 
   }
 
-	// make a button
+      // make a button
   var button = document.createElement("Button");
       button.innerHTML = "Profildaten kopieren";
       button.setAttribute ('id', 'getProfileDataButton');
       button.addEventListener("click", submitMetadata, false);
   
-  		//set styles
+      //set styles
       button.style.bottom = "80px";
       button.style.right = "50px";
       button.style.height = "50px";
@@ -138,12 +134,11 @@
       button.style.padding = "3px";
       button.style.borderStyle = "none";
       button.style.borderColor = "gray";
-  		button.style.borderRadius = "30px";
+      button.style.borderRadius = "30px";
       button.style.zIndex = 99999999;
       button.style.cursor = "pointer";
   
-  		// bin button element to document
+      // bin button element to document
       document.body.appendChild(button);
-
 
 })();

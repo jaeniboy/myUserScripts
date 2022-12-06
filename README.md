@@ -9,6 +9,10 @@ makes a button to extract basic data like titles, links, followers from facebook
 
 helps you collect links by copying h1, domain name and link into the clipboard in one click
 
+## [link-and-headline-grabber-and-translator.js](https://github.com/jaeniboy/myUserScripts/blob/main/link-and-headline-grabber-and-translator.js)
+
+does what his brother does, but additionally translates the h1
+
 ## [link-and-headline-shortener.js](https://github.com/jaeniboy/myUserScripts/blob/main/link-and-headline-shortener.js)
 
 Grabs a link, passes it to bit.ly API, receives the shortened URL and pass it to clipboard along with page's headline and source information

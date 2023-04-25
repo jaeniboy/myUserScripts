@@ -16,12 +16,12 @@ const templates = [ // Change value based on download url
   {
    	"id": "Der Gangster, der Junkie und die Hure", 
    	"selector": "https://avdlswr-a.akamaihd.net/swr3/podcasts-audioreihen/der-gangster-der-junkie-und-die-hure/",
-    "template": function(title="",author="",description="",keywords="") { return `++0\nRTI: Der Gangster, der Junkie und die Hure\n++1\nBETI: ${title}\nSPR: Pollux, Maximilian (ehem. Krimineller)\nSPR: Lemke, Roman (ehem. Drogenabhängiger)\nSPR: Titan, Tara (ehem. Prostituierte)\nGATT: Gespräch\nPTEX: ${description} (PR-Text)\nHD: ${keywords}`;}
+    "template": function(title="",author="",description="",keywords="") { return `++0\nRTI: Der Gangster, der Junkie und die Hure\n++1\nBETI: ${title}\nSPR: Pollux, Maximilian (ehem. Krimineller)\nSPR: Lemke, Roman (ehem. Drogenabhängiger)\nSPR: Workhard, Nina (Domina)\nGATT: Gespräch\nPTEX: ${description} (PR-Text)\nHD: ${keywords}`;}
   },
   {
   	"id": "SWR3 Topthema",
   	"selector": "https://avdlswr-a.akamaihd.net/swr3/podcasts-audioreihen/topthemen/",
-    "template": function(title="",author="",description="",keywords="") {  return `++0\nRTI: SWR3 Topthema\n++1\nBETI: ${title}\nAUT: ${author}\nSPR: ${author}\nOTG:\nGATT: Bericht\nPTEX: ${description} (PR-Text) AM-geeignet\nHD: ${keywords}`;}
+    "template": function(title="",author="",description="",keywords="") {  return `++0\n++1\nBETI: ${title}\nAUT: ${author}\nSPR: ${author}\nOTG:\nGATT: Bericht\nPTEX: ${description} (PR-Text) AM-geeignet\nHD: ${keywords}`;}
   },
   {
     "id":"Fünf Minuten vor dem Tod - der Kriminalpodcast",

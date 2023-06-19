@@ -20,3 +20,7 @@ Grabs a link, passes it to bit.ly API, receives the shortened URL and pass it to
 ## [data-audiothek2digas.js](https://github.com/jaeniboy/myUserScripts/blob/main/data-audiothek2digas.js)
 
 Collects and reorders data from URL reverse search for use in Digas (tiny little helper for work)
+
+## [audiothek-information-extractor](https://github.com/jaeniboy/myUserScripts/blob/main/audiothek%20information%20extractor)
+
+helps you get information like RFA and download link out of audiothek episode pages

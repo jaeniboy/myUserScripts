@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name         Audiothek Rundfunkanstalt ermitteln
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  ARD Audiothek information extractor 
+// @author       You
+// @match        https://www.ardaudiothek.de/episode/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=ardaudiothek.de
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    function getRFA() {
+
+        let jsonData = document.getElementById("__NEXT_DATA__").textContent;
+        let searchPatternRFA = /"producer":"(.*)","show"/;
+        let searchPatternURL = /"audios":\[\{"url":"(.*)","downloadUrl"/
+        let rfa = searchPatternRFA.exec(jsonData)[1];
+        let url = searchPatternURL.exec(jsonData)[1];
+        let alertText = "Produzierende RFA: " + rfa + "\nURL: " + url
+
+        return alertText
+
+    }
+
+    window.alert(getRFA())
+})();

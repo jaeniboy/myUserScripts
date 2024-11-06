@@ -3,8 +3,9 @@
 // @description   excracts data (e.g. titles, followers, links) from platform profiles on facebook, insta, twitter and youtube to c&p them directly to an excel-file
 // @version  1
 // @grant    none
-// @include  https://www.facebook.com/groups*
+
 // @include  https://www.instagram.com/*
+// @include  https://www.facebook.com/groups*
 // @include  https://twitter.com/*
 // @include  https://x.com/*
 // @include  https://www.youtube.com/*
